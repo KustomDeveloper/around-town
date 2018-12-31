@@ -5,6 +5,9 @@ import router from "./router";
 import store from "./store";
 import VueGeolocation from "vue-browser-geolocation";
 
+var VueTruncate = require("vue-truncate-filter");
+Vue.use(VueTruncate);
+
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 
