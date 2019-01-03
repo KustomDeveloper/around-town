@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1><span>Events</span> Listing</h1>
+      <h1><span>Local</span> Events</h1>
       <b-container class="card-container">
 
           <b-card-group>
@@ -10,9 +10,9 @@
           <template v-if="page != 1">
               <router-link :to="{ name: 'home', query: { page: page - 1 } }" 
               rel="prev"><span class="prev-page">&larr; Prev Page</span></router-link>
-              <template v-if="hasNextPage"> | </template>
+              <template v-if="hasNextPage"><span class="sep"> | </span></template>
           </template>
-
+ 
           <template v-if="hasNextPage">
               <router-link :to="{ name: 'home', query: { page: page + 1 } }" 
               rel="next"><span class="next-page">Next Page &rarr;</span></router-link>
@@ -55,10 +55,13 @@
   margin-top:30px;
   margin-bottom:30px;
 }
+.sep {
+  color:#fff;
+}
 .next-page, .prev-page {
-    color:#000;
-    font-weight:bold;
-    display:inline-block;
-    margin-top:20px;
+  color:#fff;
+  font-weight:bold;
+  display:inline-block;
+  margin-top:20px;
 }
 </style>

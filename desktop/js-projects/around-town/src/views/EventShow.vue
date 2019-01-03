@@ -1,25 +1,20 @@
 <template>
-      <div>
-        <div class="event-header">
-          <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
-          <h1 class="title">{{ event.title }}</h1>
-          <h5>Organized by {{ event.organizer ? event.organizer.name : '' }}</h5>
-          <h5>Category: {{ event.category }}</h5>
+  <b-container class="event-header">
+    <b-row>
+      <b-col class="event-details">
+        <h1 class="title">{{ event.title }}</h1>
+        <hr />
+        <div class="event-body">
+          <p class="event-time"><b>Time:</b> {{ event.time }} on {{ event.date }} | <b>Category:</b> {{ event.category }}</p>
+          <h3>Location:</h3>
+          <p>{{ event.location }}</p>
+          <h3>Event details:</h3>
+          <p>{{ event.description }}</p>
         </div>
-        <h2>Location</h2>
-        <address>{{ event.location }}</address>
-        <h2>Event details</h2>
-        <p>{{ event.description }}</p>
-        <h2>Attendees
-          <span class="badge -fill-gradient">{{ event.attendees ? event.attendees.length : 0 }}</span> 
-        </h2>
-        <ul class="list-group">
-          <li v-for="(attendee, index) in event.attendees" :key="index" class="list-item">
-            <b>{{ attendee.name }}</b>
-          </li>
-        </ul>
-      </div>
-    </template>
+      </b-col>
+    </b-row>
+  </b-container>
+</template>
 
 <script>
 import { mapState } from "vuex"
@@ -34,6 +29,28 @@ export default {
 </script>
 
 <style>
+h3 {
+  color:#000;
+}
+.event-details {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  border-radius:3px;
+}
+.event-details h1 {
+  color:#47B8A0;
+}
+.event-details p {
+  color:#000;
+}
+.event-body {
+  padding:20px 0;
+}
+.event-time {
+  color:#000;
+}
 .location {
   margin-bottom: 0;
 }

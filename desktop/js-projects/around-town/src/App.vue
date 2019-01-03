@@ -15,15 +15,28 @@ export default {
 }
 </script>
 <style>
+html {
+  height: 100%;
+}
+body {
+  background: linear-gradient(to right top, #673680, #4471AB, #008bc3, #00abb0, #48c48d);
+  background-size:cover;
+}
+p {
+  color:#fff;
+}
 h1 {
-  color:#C35C14;
+  color:#fff;
   position:relative;
   display:inline-block;
-  background:#fff;
+  margin-top:30px;
 }
 h1 span {
   color:#F3A61C;
   position:relative;
+}
+h3 {
+  color:#fff;
 }
 #app {
   font-family: "Source Sans Pro", sans-serif;
@@ -31,23 +44,5 @@ h1 span {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-nav {
-  padding:20px 0;
-  float:right;
-}
-.logo {
-  padding:15px 0;
-}
-nav a {
-  font-weight: bold;
-  color: #F3A61C;
-}
-nav a:hover {
-  color: #CC773D;
-  text-decoration:none;
-}
-nav a.router-link-exact-active {
-  color: #CC773D;
 }
 </style>

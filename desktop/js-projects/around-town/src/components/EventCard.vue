@@ -7,15 +7,13 @@
             tag="event"
             style=""
             class="text-center">
-            <p class="card-text">@{{ event.time }} on {{ event.date }}</p>
-            <p><BaseIcon name="users">{{ event.attendees.length }} attending</BaseIcon></p>
+            <p>{{ event.description }}</p>
+            <h3 class="card-text"><b>Time:</b> {{ event.time }} on {{ event.date }}</h3>
             </b-card>
     </router-link>
 </template>
 
 <script>
-
-
 export default {
     props: {
         event: Object
@@ -34,10 +32,17 @@ export default {
     text-decoration: none;
     font-weight: 100;
 }
+.card-text {
+    color:#000;
+    font-size:16px;
+}
 .card-group .card {
     width: 270px;
     height: 300px;
     margin: 3px;
+}
+.card-group .card p {
+    color:#000;
 }
 .card-img-top {
     max-width: 100px;
@@ -45,6 +50,6 @@ export default {
 }
 .card:hover {
     transform: scale(1.01);
-    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.5), 0 1px 15px 0 rgba(0, 0, 0, 0.5);
 }
 </style>
